@@ -22,7 +22,7 @@ Identificação de portas abertas e serviços.
 ## 💻 Etapa 3 - Exploração
 Exploração da máquina vulnerável e obtenção de acesso.
 
-![Acesso Root](prints/metasploit-root.png) ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/prints/Screenshot_2026-04-23_21-34-15.png?raw=true)
+![Acesso Root](prints metasploit-root.png) ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/prints/Screenshot_2026-04-23_21-34-15.png?raw=true)
 
 
 ---
