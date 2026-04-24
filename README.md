@@ -15,7 +15,7 @@ Scan para identificar dispositivos ativos na rede.
 ## 🔍 Etapa 2 - Scan de Portas
 Identificação de portas abertas e serviços.
 
-![Scan Nmap](prints/scan-nmap.png)
+![Scan Nmap](prints/scan-nmap.png) ![text]()
 
 ---
 
