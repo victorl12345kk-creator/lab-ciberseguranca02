@@ -8,7 +8,7 @@ Laboratório prático de cibersegurança em ambiente controlado utilizando máqu
 ## 🧪 Etapa 1 - Descoberta de Rede
 Scan para identificar dispositivos ativos na rede.
 
-(prints/scan-nmap.png)![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/prints/Screenshot_2026-04-23_21-36-45.png?raw=true)
+(imagens/scan-nmap.png)![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/prints/Screenshot_2026-04-23_21-36-45.png?raw=true)
 
 ---
 
