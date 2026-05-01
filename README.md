@@ -15,7 +15,7 @@ Scan para identificar dispositivos ativos na rede.
 ## 🔍 Etapa 2 - Scan de Portas
 Identificação de portas abertas e serviços.
 
-[Scan Nmap](prints scan-nmap.png) ![text]()
+[Scan Nmap](prints scan-nmap.png) ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/analise-logs-linux/evidencias/01-conectividade-ping.png?raw=true)
 
 
 ---
@@ -23,7 +23,7 @@ Identificação de portas abertas e serviços.
 ## 💻 Etapa 3 - Exploração
 Exploração da máquina vulnerável e obtenção de acesso.
 
-![Acesso Root](prints metasploit-root.png) ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/analise-logs-linux/evidencias/01-conectividade-ping.png?raw=true)
+![Acesso Root](prints metasploit-root.png) ![text]()
 
 
 ---
