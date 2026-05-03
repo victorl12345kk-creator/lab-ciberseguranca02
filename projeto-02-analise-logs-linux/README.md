@@ -74,7 +74,7 @@ Interpretação:
 tentativa de autenticação rejeitada pelo servidor.
 
 📸 Evidência:
-prints/![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/02-ssh-falha.png?raw=true)
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/02-ssh-falha.png?raw=true)
 
 Etapa 03 — Investigação Forense Inicial
 
@@ -97,7 +97,7 @@ Informações extraídas:
 ✔ tentativa malsucedida registrada
 
 📸 Evidência:
-prints/![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/03-auth-log.png?raw=true)
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/03-auth-log.png?raw=true)
 
 Etapa 04 — Resposta e Mitigação
 
@@ -115,7 +115,7 @@ Resultado:
 ✅ Bloqueio persistente configurado
 
 📸 Evidência:
-prints/![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/04-ufw-bloqueio.png?raw=true)
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/04-ufw-bloqueio.png?raw=true)
 📚 Aprendizados Técnicos
 
 Durante o projeto foram praticados conceitos de:
