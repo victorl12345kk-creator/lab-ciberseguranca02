@@ -97,7 +97,7 @@ Informações extraídas:
 ✔ tentativa malsucedida registrada
 
 📸 Evidência:
-prints/![text]()
+prints/![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/03-auth-log.png?raw=true)
 
 Etapa 04 — Resposta e Mitigação
 
@@ -115,8 +115,7 @@ Resultado:
 ✅ Bloqueio persistente configurado
 
 📸 Evidência:
-prints/04-ufw-bloqueio.png
-
+prints/![text]()
 📚 Aprendizados Técnicos
 
 Durante o projeto foram praticados conceitos de:
