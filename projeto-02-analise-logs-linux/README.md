@@ -54,8 +54,7 @@ ping 192.168.56.102
 Resultado:
 ✅ comunicação estabelecida
 
-📸 Evidência:
- ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/01-ping.png?raw=true)
+📸 Evidência:![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/01-ping.png?raw=true)
 
 Etapa 02 — Simulação de Tentativa de Acesso
 
@@ -73,8 +72,7 @@ Interpretação:
 
 tentativa de autenticação rejeitada pelo servidor.
 
-📸 Evidência:
-![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/02-ssh-falha.png?raw=true)
+📸 Evidência:![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/02-ssh-falha.png?raw=true)
 
 Etapa 03 — Investigação Forense Inicial
 
@@ -96,8 +94,7 @@ Informações extraídas:
 ✔ usuário alvo identificado
 ✔ tentativa malsucedida registrada
 
-📸 Evidência:
-![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/03-auth-log.png?raw=true)
+📸 Evidência:![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/03-auth-log.png?raw=true)
 
 Etapa 04 — Resposta e Mitigação
 
@@ -114,8 +111,7 @@ Resultado:
 ✅ Regra aplicada com sucesso
 ✅ Bloqueio persistente configurado
 
-📸 Evidência:
-![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/04-ufw-bloqueio.png?raw=true)
+📸 Evidência: ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/04-ufw-bloqueio.png?raw=true)
 📚 Aprendizados Técnicos
 
 Durante o projeto foram praticados conceitos de:
