@@ -74,7 +74,7 @@ Interpretação:
 tentativa de autenticação rejeitada pelo servidor.
 
 📸 Evidência:
-prints/02-ssh-falha.png
+prints/![text]()
 
 Etapa 03 — Investigação Forense Inicial
 
