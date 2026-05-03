@@ -74,7 +74,7 @@ Interpretação:
 tentativa de autenticação rejeitada pelo servidor.
 
 📸 Evidência:
-prints/![text]()
+prints/![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/02-ssh-falha.png?raw=true)
 
 Etapa 03 — Investigação Forense Inicial
 
