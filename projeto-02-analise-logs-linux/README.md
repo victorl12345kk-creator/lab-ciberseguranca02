@@ -1,27 +1,65 @@
-🔍 Projeto 02 — Análise de Logs Linux e Resposta a Incidente
-Objetivo
+🛡️ Projeto 02 — Detecção, Investigação e Mitigação de Incidente em Linux
+📌 Visão Geral
 
-Simular uma tentativa de acesso remoto via SSH, investigar logs de autenticação e aplicar mitigação com firewall em ambiente controlado.
+Neste projeto foi montado um cenário prático de segurança ofensiva e defensiva em laboratório controlado, simulando uma tentativa de acesso indevido via SSH, realizando investigação dos logs do sistema e aplicando mitigação por firewall.
 
-Ambiente
-Kali Linux → máquina de origem (192.168.56.103)
-Metasploitable 2 → alvo (192.168.56.102)
-Oracle VM VirtualBox → virtualização
-UFW → mitigação
-Etapa 1 — Teste de conectividade
+O objetivo foi reproduzir um fluxo real de trabalho comum em times de Segurança da Informação / SOC:
 
-Foi validada a comunicação entre as máquinas.
+Detectar → Investigar → Responder → Mitigar
+
+🎯 Objetivos do Projeto
+
+✔ Validar comunicação entre máquinas em rede controlada
+✔ Simular tentativa de autenticação mal sucedida via SSH
+✔ Identificar evidências em logs Linux
+✔ Correlacionar IP de origem da tentativa de acesso
+✔ Aplicar bloqueio por firewall
+✔ Documentar processo técnico
+
+🧪 Ambiente de Laboratório
+Máquina de Origem
+
+🖥️ Kali Linux
+IP: 192.168.56.103
+
+Função:
+
+geração de evento de segurança
+simulação de tentativa de autenticação
+Máquina Alvo
+
+🎯 Metasploitable 2
+IP: 192.168.56.102
+
+Função:
+
+servidor alvo
+geração de logs
+aplicação de mitigação
+Ferramentas utilizadas
+
+⚙️ Oracle VM VirtualBox
+🔍 OpenSSH
+🧱 UFW
+📄 /var/log/auth.log
+
+Etapa 01 — Conectividade
+
+Antes da simulação, foi validada a comunicação entre as máquinas.
 
 Comando:
 
 ping 192.168.56.102
 
-Print:
+Resultado:
+✅ comunicação estabelecida
 
-01-ping.png
-Etapa 2 — Tentativa de autenticação SSH
+📸 Evidência:
+prints/01-ping.png
 
-Foi realizada tentativa de login com credencial inválida para gerar evento de segurança.
+Etapa 02 — Simulação de Tentativa de Acesso
+
+Foi realizada conexão SSH com credencial inválida para gerar evento de autenticação falha.
 
 Comando:
 
@@ -31,35 +69,39 @@ Resultado:
 
 Permission denied
 
-Print:
+Interpretação:
 
-02-ssh-falha.png
-Etapa 3 — Investigação de logs
+tentativa de autenticação rejeitada pelo servidor.
 
-Foi analisado o log de autenticação Linux.
+📸 Evidência:
+prints/02-ssh-falha.png
+
+Etapa 03 — Investigação Forense Inicial
+
+Análise dos registros de autenticação:
 
 Comando:
 
 tail -20 /var/log/auth.log
 
-Achados:
-
-falha de autenticação
-IP de origem identificado
-usuário alvo identificado
-
-Trecho encontrado:
+Evento encontrado:
 
 authentication failure
 rhost=192.168.56.103
 Failed password for msfadmin
+Informações extraídas:
 
-Print:
+✔ IP de origem identificado
+✔ serviço utilizado: SSH
+✔ usuário alvo identificado
+✔ tentativa malsucedida registrada
 
-03-auth-log.png
-Etapa 4 — Mitigação
+📸 Evidência:
+prints/03-auth-log.png
 
-Foi ativado firewall e aplicada regra de bloqueio ao IP de origem.
+Etapa 04 — Resposta e Mitigação
+
+Foi aplicada contenção bloqueando o IP de origem.
 
 Comandos:
 
@@ -68,18 +110,37 @@ sudo ufw deny from 192.168.56.103
 sudo ufw status
 
 Resultado:
-✔ firewall ativo
-✔ regra aplicada
+✅ Firewall ativado
+✅ Regra aplicada com sucesso
+✅ Bloqueio persistente configurado
 
-Print:
+📸 Evidência:
+prints/04-ufw-bloqueio.png
 
-04-ufw-bloqueio.png
-Aprendizados
+📚 Aprendizados Técnicos
 
-✔ análise de logs Linux
-✔ investigação inicial de incidente
-✔ identificação de origem de acesso
-✔ autenticação SSH
-✔ firewall básico
-✔ mitigação por IP
-✔ documentação técnica
+Durante o projeto foram praticados conceitos de:
+
+🔹 Linux Administration
+🔹 SSH Authentication
+🔹 Log Analysis
+🔹 Incident Investigation
+🔹 Firewall Management
+🔹 Security Monitoring
+🔹 Incident Response
+🔹 Technical Documentation
+
+🎯 Conclusão
+
+Este laboratório simulou um fluxo básico porém realista de tratamento de incidente:
+
+Tentativa de acesso → geração de log → investigação → identificação → mitigação
+
+Competências demonstradas:
+
+✅ análise de logs
+✅ investigação inicial
+✅ correlação de eventos
+✅ resposta a incidente
+✅ hardening básico
+✅ documentação técnica
