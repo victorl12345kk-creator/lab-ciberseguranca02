@@ -55,7 +55,7 @@ Resultado:
 ✅ comunicação estabelecida
 
 📸 Evidência:
-prints/ ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/01-ping.png?raw=true)
+prints/01-ping.png ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-02-analise-logs-linux/evidencias/01-ping.png?raw=true)
 
 Etapa 02 — Simulação de Tentativa de Acesso
 
