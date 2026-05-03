@@ -55,7 +55,7 @@ Resultado:
 ✅ comunicação estabelecida
 
 📸 Evidência:
-prints/01-ping.png
+prints/ ![text]()
 
 Etapa 02 — Simulação de Tentativa de Acesso
 
