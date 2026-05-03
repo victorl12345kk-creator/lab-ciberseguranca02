@@ -15,7 +15,7 @@ Scan para identificar dispositivos ativos na rede.
 ## 🔍 Etapa 2 - Scan de Portas
 Identificação de portas abertas e serviços.
 
-[Scan Nmap](prints scan-nmap.png) ![text]()
+[Scan Nmap](prints scan-nmap.png) ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-01-analise-rede-vulnerabilidades/evidencias/02-scan-portas-servicos.png?raw=true)
 
 
 ---
