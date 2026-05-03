@@ -97,7 +97,7 @@ Informações extraídas:
 ✔ tentativa malsucedida registrada
 
 📸 Evidência:
-prints/03-auth-log.png
+prints/![text]()
 
 Etapa 04 — Resposta e Mitigação
 
