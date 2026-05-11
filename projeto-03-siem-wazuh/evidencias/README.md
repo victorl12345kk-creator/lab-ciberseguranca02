@@ -160,9 +160,10 @@ This activity simulated:
 
 ### 📸 Print to use:
 
-![text]()
 
-![SSH Failed Authentication](evidencias/04-ssh-failed-authentication.png)
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/04-ssh-failed-authentication.png?raw=true)
+
+
 
 ---
 
