@@ -71,10 +71,10 @@ https://<wazuh-ip>:443
 
 ## Evidence
 
-### 📸 Print to use: ![text]()
+### 📸 Print to use: ![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/01-wazuh-installation-finished.png?raw=true)
 
 
-![Installation](evidencias/01-wazuh-installation-finished.png)
+
 
 ---
 
