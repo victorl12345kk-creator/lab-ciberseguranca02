@@ -226,16 +226,16 @@ Esta etapa simulou técnicas reais de reconhecimento frequentemente utilizadas e
 
 ### 📸 Print to use:
 
-![text]()
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/06-nmap-aggressive-scan.png?raw=true)
 
 
 ---
 
 # 📊 Detecção de Ameaças e Análise de Logs
 
-Security events generated during the SSH authentication attempts were collected and analyzed using the Wazuh Discover dashboard.
+Os eventos de segurança gerados durante as tentativas de autenticação SSH foram coletados e analisados utilizando o painel Discover do Wazuh.
 
-The SIEM successfully detected:
+O SIEM detectou com sucesso:
 
 * Authentication failures
 * SSH login events
@@ -243,9 +243,9 @@ The SIEM successfully detected:
 * Suspicious activity logs
 * User session information
 
-## Threat Hunting Activities
+## Atividades de Threat Hunting
 
-The Discover dashboard was used to:
+O painel Discover foi utilizado para:
 
 * Search for SSH-related logs
 * Filter authentication events
@@ -256,9 +256,10 @@ The Discover dashboard was used to:
 
 ### 📸 Print to use:
 
+
+
 ![text]()
 
-![Threat Detection](evidencias/07-wazuh-threat-detection.png)
 
 ---
 
