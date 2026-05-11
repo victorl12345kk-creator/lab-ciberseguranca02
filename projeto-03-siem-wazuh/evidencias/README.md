@@ -102,11 +102,13 @@ nmap 192.168.56.101
 
 ## Evidence
 
-### 📸 Print to use: ![text]()
+### 📸 Print to use: 
+
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/02-network-connectivity-test.png?raw=true)
 
 
 
-![Connectivity](evidencias/02-network-connectivity-test.png)
+
 
 ---
 
