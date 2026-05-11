@@ -258,7 +258,7 @@ O painel Discover foi utilizado para:
 
 
 
-![text]()
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/07-wazuh-threat-detection.png?raw=true)
 
 
 ---
