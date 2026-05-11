@@ -126,9 +126,10 @@ The dashboard confirmed:
 
 ### 📸 Print to use:
 
-![text]()
 
-![Agent Active](evidencias/03-wazuh-agent-active.png)
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/03-wazuh-agent-active.png?raw=true)
+
+
 
 ---
 
