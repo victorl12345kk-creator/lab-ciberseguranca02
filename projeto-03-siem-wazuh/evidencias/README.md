@@ -206,7 +206,7 @@ Alguns serviços identificados durante os scans incluíram:
 ### 📸 Print to use:
 
 
-![text]()
+![text](https://github.com/victorl12345kk-creator/lab-ciberseguranca02/blob/main/projeto-03-siem-wazuh/evidencias/05-nmap-service-enumeration.png?raw=true)
 
 
 ---
