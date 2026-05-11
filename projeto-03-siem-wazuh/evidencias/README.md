@@ -8,15 +8,14 @@ O laboratório foi construído em um ambiente virtualizado controlado utilizando
 
 O objetivo deste projeto foi obter experiência prática com:
 
-* SIEM configuration
-* Threat monitoring
-* Log analysis
-* SSH authentication monitoring
-* Network reconnaissance
-* Service enumeration
-* Security event investigation
-* Blue Team fundamentals
-
+* Configuração de SIEM
+* Monitoramento de ameaças
+* Análise de logs
+* Monitoramento de autenticação SSH
+* Reconhecimento de rede
+* Enumeração de serviços
+* Investigação de eventos de segurança
+* Fundamentos Blue Team
 ---
 
 # 🖥️ Ambiente do Laboratório
@@ -86,11 +85,11 @@ Antes de iniciar as atividades de monitoramento, foi validada a conectividade en
 
 Os testes incluíram:
 
-* Ping validation
-* Initial Nmap scans
-* Service reachability tests
+Validação de ping
+Scans iniciais com Nmap
+Testes de alcance dos serviços
 
-## Commands Used
+## Comandos utilizados
 
 ```bash
 ping 192.168.56.101
@@ -167,25 +166,25 @@ Geração de eventos de segurança
 
 Foi realizado reconhecimento de rede utilizando Nmap para identificar:
 
-* Open ports
-* Running services
-* Service versions
-* Operating system details
-* Attack surface information
+* Portas abertas
+* Serviços ativos
+* Versões dos serviços
+* Informações do sistema operacional
+* Informações da superfície de ataque
 
-## Basic Enumeration
+## Enumeração básica
 
 ```bash
 nmap 192.168.56.101
 ```
 
-## Service Detection
+## Detecção de serviços
 
 ```bash
 nmap -sV -sC 192.168.56.101
 ```
 
-## Aggressive Scan
+## Scan agressivo
 
 ```bash
 nmap -A 192.168.56.101
@@ -237,20 +236,20 @@ Os eventos de segurança gerados durante as tentativas de autenticação SSH for
 
 O SIEM detectou com sucesso:
 
-* Authentication failures
-* SSH login events
-* PAM authentication events
-* Suspicious activity logs
-* User session information
+* Falhas de autenticação
+* Eventos de login SSH
+* Eventos de autenticação PAM
+* Logs de atividades suspeitas
+* Informações de sessão de usuários
 
 ## Atividades de Threat Hunting
 
 O painel Discover foi utilizado para:
 
-* Search for SSH-related logs
-* Filter authentication events
-* Investigate generated alerts
-* Analyze log entries
+* Pesquisar logs relacionados a SSH
+* Filtrar eventos de autenticação
+* Investigar alertas gerados
+* Analisar entradas de logs
 
 ## Evidence
 
@@ -275,67 +274,45 @@ O painel Discover foi utilizado para:
 
 ---
 
-# 🎯 Habilidades Demonstradas
+#🎯 Habilidades Demonstradas
 
-This project demonstrates practical experience with:
+Este projeto demonstra experiência prática com:
 
-* SIEM deployment
-* Security monitoring
-* Threat detection
-* SSH log analysis
-* Blue Team operations
-* Network reconnaissance
-* Service enumeration
-* Security event investigation
-* Log analysis
-* Virtual lab environments
-* Linux administration
+* Implementação de SIEM
+* Monitoramento de segurança
+* Detecção de ameaças
+* Análise de logs SSH
+* Operações Blue Team
+* Reconhecimento de rede
+* Enumeração de serviços
+* Investigação de eventos de segurança
+* Análise de logs
+* Ambientes virtuais de laboratório
+* Administração Linux
+📚 Aprendizados Obtidos
 
----
+Durante este projeto foram desenvolvidos conhecimentos práticos em:
 
-# 📚 Aprendizados Obtidos
+* Construção de ambientes estilo SOC
+* Geração e análise de eventos de segurança
+* Monitoramento de tentativas de autenticação
+* Identificação de serviços expostos
+* Investigação de logs utilizando ferramentas SIEM
+* Visibilidade da superfície de ataque
+* Fundamentos Blue Team
+🚀 Melhorias Futuras
 
-Through this project, practical knowledge was gained in:
+Versões futuras deste laboratório poderão incluir:
 
-* Building SOC-style environments
-* Generating and analyzing security events
-* Monitoring authentication attempts
-* Identifying exposed services
-* Investigating logs using SIEM tools
-* Understanding attack surface visibility
-* Blue Team fundamentals
-
----
-
-# 🚀 Melhorias Futuras
-
-Future versions of this lab may include:
-
-* Hydra brute force attacks
-* Active Response automation
-* Automatic IP blocking
+* Ataques brute force com Hydra
+* Automação com Active Response
+* Bloqueio automático de IP
 * File Integrity Monitoring (FIM)
-* Advanced threat hunting
-* Custom Wazuh rules
-* Malware simulation
-* Web enumeration
+* Threat hunting avançado
+* Regras customizadas no Wazuh
+* Simulação de malware
+* Enumeração web
 
----
-
-# 📸 Estrutura das Evidências
-
-```text
-📁 evidencias
- ├── 01-wazuh-installation-finished.png
- ├── 02-network-connectivity-test.png
- ├── 03-wazuh-agent-active.png
- ├── 04-ssh-failed-authentication.png
- ├── 05-nmap-service-enumeration.png
- ├── 06-nmap-aggressive-scan.png
- └── 07-wazuh-threat-detection.png
-```
-
----
 
 # ✅ Conclusão
 
