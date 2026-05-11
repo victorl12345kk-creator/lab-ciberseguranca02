@@ -213,14 +213,14 @@ Alguns serviços identificados durante os scans incluíram:
 
 # 🚨 Reconhecimento Avançado com Nmap
 
-The aggressive scan provided:
+O scan agressivo forneceu:
 
-* OS fingerprinting
-* NSE script execution
-* Advanced service detection
-* Network reconnaissance data
+* Fingerprinting do sistema operacional
+* Execução de scripts NSE
+* Detecção avançada de serviços
+* Informações avançadas de reconhecimento de rede
 
-This step simulated real-world reconnaissance techniques commonly used during penetration testing and red team activities.
+Esta etapa simulou técnicas reais de reconhecimento frequentemente utilizadas em testes de invasão e atividades Red Team.
 
 ## Evidence
 
@@ -228,7 +228,6 @@ This step simulated real-world reconnaissance techniques commonly used during pe
 
 ![text]()
 
-![Nmap Aggressive Scan](evidencias/06-nmap-aggressive-scan.png)
 
 ---
 
