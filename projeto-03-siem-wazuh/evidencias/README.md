@@ -113,14 +113,13 @@ nmap 192.168.56.101
 ---
 
 # 🛰️ Integração do Agente Wazuh
+O agente Wazuh foi integrado ao Wazuh Manager para permitir monitoramento centralizado e coleta de eventos de segurança.
 
-The Wazuh agent was integrated with the Wazuh Manager to allow centralized monitoring and event collection.
+O painel confirmou:
 
-The dashboard confirmed:
-
-* Agent communication
-* Active status
-* Successful registration
+* Comunicação do agente
+* Status ativo
+* Registro realizado com sucesso
 
 ## Evidence
 
@@ -135,27 +134,24 @@ The dashboard confirmed:
 
 # 🔥 Simulação de Falha de Autenticação SSH
 
-A controlled authentication attack simulation was performed using SSH.
+Foi realizada uma simulação controlada de ataque de autenticação utilizando SSH.
 
-Multiple failed login attempts were generated from Kali Linux against the Metasploitable target.
+Múltiplas tentativas de login falharam propositalmente a partir do Kali Linux contra o alvo Metasploitable 2.
 
-## Command Used
+## Comando utilizado
 
 ```bash
 ssh msfadmin@192.168.56.101
 ```
 
-Incorrect passwords were intentionally used multiple times to generate authentication failure logs.
+Objetivo
 
-## Objective
+Esta atividade simulou:
 
-This activity simulated:
-
-* Failed authentication attempts
-* Suspicious login behavior
-* Basic brute force behavior
-* Security event generation
-
+Tentativas de autenticação inválidas
+Comportamento suspeito de login
+Simulação básica de brute force
+Geração de eventos de segurança
 ## Evidence
 
 ### 📸 Print to use:
