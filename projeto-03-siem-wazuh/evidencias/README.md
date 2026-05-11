@@ -71,9 +71,8 @@ https://<wazuh-ip>:443
 
 ## Evidence
 
-### 📸 Print to use:
+### 📸 Print to use: ![text]()
 
-`01-wazuh-installation-finished.png`
 
 ![Installation](evidencias/01-wazuh-installation-finished.png)
 
@@ -101,9 +100,9 @@ nmap 192.168.56.101
 
 ## Evidence
 
-### 📸 Print to use:
+### 📸 Print to use: ![text]()
 
-`02-network-connectivity-test.png`
+
 
 ![Connectivity](evidencias/02-network-connectivity-test.png)
 
@@ -123,7 +122,7 @@ The dashboard confirmed:
 
 ### 📸 Print to use:
 
-`03-wazuh-agent-active.png`
+![text]()
 
 ![Agent Active](evidencias/03-wazuh-agent-active.png)
 
@@ -156,7 +155,7 @@ This activity simulated:
 
 ### 📸 Print to use:
 
-`04-ssh-failed-authentication.png`
+![text]()
 
 ![SSH Failed Authentication](evidencias/04-ssh-failed-authentication.png)
 
@@ -206,7 +205,7 @@ Some services identified during the scan included:
 
 ### 📸 Print to use:
 
-`05-nmap-service-enumeration.png`
+![text]()
 
 ![Nmap Enumeration](evidencias/05-nmap-service-enumeration.png)
 
@@ -227,7 +226,7 @@ This step simulated real-world reconnaissance techniques commonly used during pe
 
 ### 📸 Print to use:
 
-`06-nmap-aggressive-scan.png`
+![text]()
 
 ![Nmap Aggressive Scan](evidencias/06-nmap-aggressive-scan.png)
 
@@ -258,7 +257,7 @@ The Discover dashboard was used to:
 
 ### 📸 Print to use:
 
-`07-wazuh-threat-detection.png`
+![text]()
 
 ![Threat Detection](evidencias/07-wazuh-threat-detection.png)
 
@@ -340,16 +339,15 @@ Future versions of this lab may include:
 
 # ✅ Conclusão
 
-This project successfully demonstrated the implementation of a functional SOC-style monitoring environment using Wazuh SIEM.
+Este projeto demonstrou com sucesso a implementação de um ambiente funcional de monitoramento estilo SOC utilizando o Wazuh SIEM.
 
-The lab simulated:
+O laboratório simulou:
 
-* Threat detection
-* Authentication monitoring
-* Log analysis
-* Network reconnaissance
-* Service enumeration
-* Security event investigation
+* Detecção de ameaças
+* Monitoramento de autenticação
+* Análise de logs
+* Reconhecimento de rede
+* Enumeração de serviços
+* Investigação de eventos de segurança
 
-The project provided hands-on experience with both offensive and defensive cybersecurity concepts within a controlled virtual environment.
-
+O projeto proporcionou experiência prática tanto com conceitos ofensivos quanto defensivos de cibersegurança dentro de um ambiente virtual controlado.
