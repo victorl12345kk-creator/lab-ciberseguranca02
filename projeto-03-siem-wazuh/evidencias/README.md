@@ -44,7 +44,7 @@ O objetivo deste projeto foi obter experiência prática com:
 
 O ambiente foi configurado utilizando um adaptador Host-Only no VirtualBox para permitir comunicação entre todas as máquinas virtuais mantendo o laboratório isolado.
 
-Connectivity tests were performed using:
+Testes de conectividade foram realizados utilizando:
 
 ```bash
 ping 192.168.56.101
@@ -54,16 +54,16 @@ ping 192.168.56.101
 
 # ⚙️ Instalação do Wazuh
 
-The Wazuh SIEM platform was installed and configured on Ubuntu.
+A plataforma Wazuh SIEM foi instalada e configurada no Ubuntu.
 
-The installation included:
+A instalação incluiu:
 
-* Wazuh Manager
-* Wazuh Dashboard
-* Wazuh Indexer
-* Agent integration
+Wazuh Manager
+Wazuh Dashboard
+Wazuh Indexer
+Integração de agentes
 
-The web dashboard was successfully initialized and accessed through:
+O painel web foi iniciado com sucesso e acessado através de:
 
 ```text
 https://<wazuh-ip>:443
@@ -82,9 +82,9 @@ https://<wazuh-ip>:443
 
 # 🔌 Validação da Conectividade de Rede
 
-Before starting monitoring activities, connectivity between the machines was validated.
+Antes de iniciar as atividades de monitoramento, foi validada a conectividade entre as máquinas do laboratório.
 
-Tests included:
+Os testes incluíram:
 
 * Ping validation
 * Initial Nmap scans
@@ -165,7 +165,7 @@ Geração de eventos de segurança
 
 # 🔎 Reconhecimento de Rede e Enumeração de Serviços
 
-Network reconnaissance was performed using Nmap to identify:
+Foi realizado reconhecimento de rede utilizando Nmap para identificar:
 
 * Open ports
 * Running services
@@ -191,9 +191,7 @@ nmap -sV -sC 192.168.56.101
 nmap -A 192.168.56.101
 ```
 
-## Services Identified
-
-Some services identified during the scan included:
+Alguns serviços identificados durante os scans incluíram:
 
 * SSH
 * FTP
@@ -207,9 +205,9 @@ Some services identified during the scan included:
 
 ### 📸 Print to use:
 
+
 ![text]()
 
-![Nmap Enumeration](evidencias/05-nmap-service-enumeration.png)
 
 ---
 
