@@ -1,131 +1,180 @@
-# Projeto 04 — SIEM + Detecção de Ataques SSH com Wazuh
+# 🛡️ Projeto 04 — Wazuh SIEM + Detecção de Eventos SSH
 
-## Visão Geral
+## 📌 Objetivo
 
-Este projeto teve como objetivo implementar um laboratório de monitoramento e detecção de ameaças utilizando o Wazuh SIEM em ambiente virtualizado.
+Este projeto teve como objetivo implementar um laboratório de monitoramento e detecção de eventos de segurança utilizando Wazuh SIEM em ambiente virtualizado.
 
-O laboratório foi desenvolvido para simular atividades suspeitas relacionadas a autenticação SSH e brute force, permitindo monitoramento de logs, análise de eventos e investigação de alertas de segurança.
+O laboratório foi utilizado para simular tentativas de autenticação SSH e atividades relacionadas a brute force, permitindo coleta de logs, análise de eventos e investigação em ambiente SOC.
 
 ---
 
-# Ambiente do Laboratório
-
+# 🖥️ Ambiente Utilizado
 
 | Máquina | Função | IP |
 |---|---|---|
-| Kali Linux | Máquina atacante | 192.168.56.106 |
-| Metasploitable 3 | Máquina alvo vulnerável | 192.168.56.101 |
+| Kali Linux | Máquina atacante/análise | 192.168.56.106 |
+| Metasploitable 2 | Máquina vulnerável/alvo | 192.168.56.101 |
 | Ubuntu + Wazuh | SIEM/Monitoramento | 192.168.56.104 |
 
 ---
 
-# Ferramentas Utilizadas
+# 🛠️ Ferramentas Utilizadas
+
 - Wazuh SIEM
 - Kali Linux
-- Metasploitable 3
+- Metasploitable 2
 - Hydra
 - SSH
 - Linux
 - VirtualBox
-  
-# Etapas do Projeto
-
-## 1. Validação da conectividade entre as máquinas
-
-Inicialmente foi realizado teste de comunicação entre as máquinas do laboratório utilizando o comando ping, garantindo que os hosts estavam se comunicando corretamente na rede Host-Only.
-
-### Evidência
-Validação de conectividade
 
 ---
 
-## 2. Verificação do funcionamento do agente Wazuh
+# ⚙️ Etapas Realizadas
 
-Foi realizada validação do agente Wazuh no Kali Linux para confirmar comunicação correta com o servidor SIEM.
-
-### Evidência
-Wazuh Agent
-
----
-
-## 3. Ativação do serviço SSH
-
-O serviço SSH foi iniciado no Kali Linux para permitir a simulação de autenticações e geração de logs de segurança.
-
-### Evidência
-SSH Active
+1. Configuração do laboratório virtualizado
+2. Validação do agente Wazuh
+3. Ativação do serviço SSH
+4. Simulação de brute force com Hydra
+5. Geração de eventos de autenticação
+6. Monitoramento e análise de logs no Wazuh
 
 ---
 
-## 4. Simulação de ataque brute force SSH
+# 💻 Comandos Utilizados
 
-Foi utilizada a ferramenta Hydra para simular múltiplas tentativas de autenticação SSH utilizando wordlists de senhas.
+## Verificação do serviço SSH
 
-Com isso, o laboratório gerou eventos de autenticação falha e comportamento semelhante a brute force.
+bash sudo systemctl status ssh 
 
-### Evidência
-Hydra SSH
+## Inicialização do serviço SSH
+
+bash sudo systemctl start ssh 
+
+## Simulação de brute force SSH
+
+bash hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.101 
 
 ---
 
-## 5. Detecção de eventos no Wazuh
+# 📸 Evidências
 
-O Wazuh SIEM identificou eventos relacionados a:
-- brute force
+---
+
+## 📸 01 — Simulação de brute force com Hydra
+
+Hydra brute force
+
+### Análise Técnica
+
+Foi realizada simulação de brute force SSH utilizando a ferramenta Hydra contra o alvo monitorado no laboratório.
+
+### Importância para Segurança
+
+Ataques de força bruta podem indicar:
+- tentativa de acesso não autorizado
 - credential access
-- authentication failure
-- ssh events
+- exploração de credenciais fracas
 
-Os eventos foram detectados automaticamente pelo sistema de monitoramento.
-
-### Evidência
-Wazuh Detection
+Esse tipo de evento é frequentemente monitorado em ambientes SOC.
 
 ---
 
-## 6. Investigação de eventos de segurança
+## 📸 02 — Serviço SSH ativo no ambiente Linux
 
-Os logs foram analisados no dashboard do Wazuh através da área de Security Events e Discover, permitindo investigação dos eventos gerados durante o ataque.
+SSH ativo
 
-### Evidência
-Security Events
+### Análise Técnica
 
-### Evidência
-Log Analysis
+O serviço OpenSSH foi iniciado e validado no ambiente Linux para permitir os testes de autenticação controlados.
+
+### Importância para Segurança
+
+Serviços SSH expostos na rede podem ser alvo de:
+- brute force
+- exploração remota
+- credenciais comprometidas
+
+Por isso o monitoramento desse serviço é fundamental em ambientes corporativos.
 
 ---
 
-# Resultado Final
+## 📸 03 — Falhas de autenticação e erros de conexão
+
+Falhas de autenticação
+
+### Análise Técnica
+
+As múltiplas tentativas de autenticação realizadas pelo Hydra geraram erros e eventos registrados no sistema monitorado.
+
+### Importância para Segurança
+
+Eventos repetidos de falha de login podem indicar:
+- brute force
+- tentativa de invasão
+- atividade suspeita
+
+Esses eventos são frequentemente correlacionados em plataformas SIEM.
+
+---
+
+## 📸 04 — Eventos e alertas identificados no Wazuh
+
+Alertas Wazuh
+
+### Análise Técnica
+
+O Wazuh identificou eventos relacionados a autenticação SSH e atividades monitoradas durante os testes realizados no laboratório.
+
+### Importância para Segurança
+
+O monitoramento SIEM permite:
+- análise centralizada
+- investigação de eventos
+- correlação de logs
+- identificação de comportamento suspeito
+
+---
+
+## 📸 05 — Agente Kali Linux ativo no Wazuh
+
+Agente Kali
+
+### Análise Técnica
+
+O endpoint Kali Linux foi registrado corretamente no Wazuh Manager e permaneceu ativo durante o monitoramento do ambiente.
+
+### Importância para Segurança
+
+A visibilidade dos endpoints monitorados é essencial para:
+- coleta de logs
+- auditoria
+- investigação de incidentes
+- monitoramento contínuo
+
+---
+
+# 📌 Resultado Final
 
 O laboratório foi capaz de:
 
-- detectar eventos de brute force SSH
+- monitorar eventos SSH
 - registrar logs de autenticação
-- monitorar eventos de segurança
-- identificar comportamento suspeito
-- centralizar logs no Wazuh SIEM
-- realizar investigação básica de eventos
+- detectar atividades suspeitas
+- analisar eventos em ambiente SIEM
+- centralizar logs no Wazuh
+- praticar conceitos de Blue Team e SOC
 
 ---
 
-# Tecnologias Utilizadas
-
-- Wazuh
-- Hydra
-- Kali Linux
-- Linux
-- SSH
-- VirtualBox
-
----
-
-# Habilidades Desenvolvidas
+# 🎯 Competências Desenvolvidas
 
 - SIEM
-- Threat Detection
+- Monitoramento de eventos
+- Análise de logs
 - SSH Monitoring
-- Log Analysis
+- Threat Detection
 - Blue Team
-- Security Monitoring
-- Troubleshooting
-- Investigação de Eventos
+- Investigação de eventos
+- Troubleshooting Linux
+- Segurança em ambientes virtualiza
