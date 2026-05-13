@@ -10,9 +10,11 @@ O laboratório foi desenvolvido para simular atividades suspeitas relacionadas a
 
 # Ambiente do Laboratório
 
+
 | Máquina | Função | IP |
 |---|---|---|
 | Kali Linux | Máquina atacante | 192.168.56.106 |
+| Metasploitable 3 | Máquina alvo vulnerável | 192.168.56.101 |
 | Ubuntu + Wazuh | SIEM/Monitoramento | 192.168.56.104 |
 
 ---
