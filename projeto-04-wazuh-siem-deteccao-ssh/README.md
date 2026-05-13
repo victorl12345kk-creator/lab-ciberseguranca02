@@ -20,16 +20,14 @@ O laboratório foi desenvolvido para simular atividades suspeitas relacionadas a
 ---
 
 # Ferramentas Utilizadas
-
 - Wazuh SIEM
 - Kali Linux
+- Metasploitable 3
 - Hydra
 - SSH
 - Linux
 - VirtualBox
-
----
-
+  
 # Etapas do Projeto
 
 ## 1. Validação da conectividade entre as máquinas
