@@ -167,7 +167,8 @@ hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.101
 
 # 📸 01 — Agente Wazuh ativo e conectado
 
-![Agente Wazuh ativo e conectado](evidencias/01-wazuh-agent-active.png)
+
+![text]()
 
 ## 🧪 O que foi realizado
 
