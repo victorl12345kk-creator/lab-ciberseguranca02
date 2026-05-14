@@ -1,43 +1,137 @@
 # 🛡️ Projeto 04 — Wazuh SIEM + Detecção de Eventos SSH
 
-## 📌 Objetivo
+# 📌 Visão Geral
 
-Este projeto teve como objetivo implementar um laboratório de monitoramento e detecção de eventos de segurança utilizando Wazuh SIEM em ambiente virtualizado.
+Este projeto foi desenvolvido com foco em monitoramento de eventos de segurança utilizando o Wazuh SIEM em um laboratório virtualizado.
 
-O laboratório foi utilizado para simular tentativas de autenticação SSH e atividades relacionadas a brute force, permitindo coleta de logs, análise de eventos e investigação em ambiente SOC.
+O ambiente foi criado para simular atividades comuns monitoradas em ambientes SOC (Security Operations Center), incluindo:
+
+* autenticação SSH
+* tentativas de brute force
+* geração de logs
+* análise de eventos
+* monitoramento de endpoints
+* investigação de atividades suspeitas
+
+Durante os testes, foi utilizada uma máquina Kali Linux para gerar eventos de autenticação contra um alvo vulnerável (Metasploitable 2), enquanto o Wazuh centralizou os logs e realizou a detecção dos eventos no ambiente.
+
+O objetivo principal foi praticar conceitos de:
+
+* Blue Team
+* Threat Detection
+* SIEM
+* Monitoramento de logs
+* Investigação de eventos
+* Segurança ofensiva controlada
+* Análise de incidentes
 
 ---
 
-# 🖥️ Ambiente Utilizado
+# 🖥️ Arquitetura do Laboratório
 
-| Máquina | Função | IP |
-|---|---|---|
-| Kali Linux | Máquina atacante/análise | 192.168.56.106 |
-| Metasploitable 2 | Máquina vulnerável/alvo | 192.168.56.101 |
-| Ubuntu + Wazuh | SIEM/Monitoramento | 192.168.56.104 |
+| Máquina          | Função                   | Sistema Operacional   | IP             |
+| ---------------- | ------------------------ | --------------------- | -------------- |
+| Kali Linux       | Máquina atacante/análise | Kali Linux            | 192.168.56.106 |
+| Metasploitable 2 | Máquina vulnerável/alvo  | Linux Vulnerável      | 192.168.56.101 |
+| Ubuntu + Wazuh   | SIEM/Monitoramento       | Ubuntu Server/Desktop | 192.168.56.104 |
 
 ---
 
 # 🛠️ Ferramentas Utilizadas
 
-- Wazuh SIEM
-- Kali Linux
-- Metasploitable 2
-- Hydra
-- SSH
-- Linux
-- VirtualBox
+| Ferramenta           | Finalidade                                   |
+| -------------------- | -------------------------------------------- |
+| Wazuh SIEM           | Monitoramento e análise de logs              |
+| Kali Linux           | Simulação de ataques e testes                |
+| Metasploitable 2     | Ambiente vulnerável controlado               |
+| Hydra                | Simulação de brute force SSH                 |
+| OpenSSH              | Serviço de autenticação remota               |
+| Linux                | Sistema operacional utilizado no laboratório |
+| Oracle VM VirtualBox | Virtualização do ambiente                    |
+
+---
+
+# 🎯 Objetivo do Projeto
+
+O projeto teve como objetivo:
+
+* implementar um ambiente SIEM funcional
+* monitorar eventos de autenticação SSH
+* detectar comportamentos suspeitos
+* analisar logs de segurança
+* praticar investigação de eventos
+* compreender fluxo de monitoramento em ambientes SOC
 
 ---
 
 # ⚙️ Etapas Realizadas
 
-1. Configuração do laboratório virtualizado
-2. Validação do agente Wazuh
-3. Ativação do serviço SSH
-4. Simulação de brute force com Hydra
-5. Geração de eventos de autenticação
-6. Monitoramento e análise de logs no Wazuh
+## 1️⃣ Configuração do laboratório virtualizado
+
+Foi criado um ambiente isolado utilizando Oracle VM VirtualBox contendo:
+
+* Kali Linux
+* Metasploitable 2
+* Ubuntu com Wazuh
+
+As máquinas foram configuradas na mesma rede virtual para permitir comunicação entre os hosts.
+
+---
+
+## 2️⃣ Instalação e validação do Wazuh
+
+O Wazuh foi instalado no Ubuntu para atuar como SIEM do laboratório.
+
+Após a instalação:
+
+* serviços foram inicializados
+* dashboard foi validado
+* logs passaram a ser monitorados
+* o agente Kali foi registrado no manager
+
+---
+
+## 3️⃣ Validação do agente Wazuh
+
+O endpoint Kali Linux foi registrado corretamente no Wazuh.
+
+Isso permitiu:
+
+* coleta de logs
+* envio de eventos
+* monitoramento em tempo real
+* análise centralizada
+
+---
+
+## 4️⃣ Ativação do serviço SSH
+
+O serviço OpenSSH foi iniciado no ambiente Linux para permitir testes de autenticação.
+
+Isso possibilitou:
+
+* simulação de login
+* geração de falhas de autenticação
+* monitoramento de eventos SSH
+
+---
+
+## 5️⃣ Simulação de brute force com Hydra
+
+Foi utilizada a ferramenta Hydra para realizar múltiplas tentativas de autenticação SSH contra o alvo vulnerável.
+
+O objetivo foi gerar eventos monitoráveis pelo SIEM.
+
+---
+
+## 6️⃣ Coleta e análise de logs
+
+Os eventos gerados durante os testes foram enviados para o Wazuh, permitindo:
+
+* visualização dos logs
+* análise de eventos
+* investigação das atividades
+* detecção de comportamento suspeito
 
 ---
 
@@ -45,112 +139,206 @@ O laboratório foi utilizado para simular tentativas de autenticação SSH e ati
 
 ## Verificação do serviço SSH
 
-bash sudo systemctl status ssh 
+```bash
+sudo systemctl status ssh
+```
+
+---
 
 ## Inicialização do serviço SSH
 
-bash sudo systemctl start ssh 
+```bash
+sudo systemctl start ssh
+```
+
+---
 
 ## Simulação de brute force SSH
 
-bash hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.101 
+```bash
+hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.101
+```
 
 ---
 
-# 📸 Evidências
+# 📸 Evidências do Projeto
 
 ---
 
-## 📸 01 — Simulação de brute force com Hydra
+# 📸 01 — Agente Wazuh ativo e conectado
 
-Hydra brute force
+![Agente Wazuh ativo e conectado](evidencias/01-wazuh-agent-active.png)
 
-### Análise Técnica
+## 🧪 O que foi realizado
 
-Foi realizada simulação de brute force SSH utilizando a ferramenta Hydra contra o alvo monitorado no laboratório.
+Foi realizada a validação do agente Wazuh instalado no Kali Linux.
 
-### Importância para Segurança
+O endpoint foi registrado corretamente no Wazuh Manager e permaneceu ativo durante o monitoramento.
 
-Ataques de força bruta podem indicar:
-- tentativa de acesso não autorizado
-- credential access
-- exploração de credenciais fracas
+---
+
+## 🔍 Resultado Obtido
+
+O painel do Wazuh apresentou:
+
+* agente online
+* status ativo
+* IP monitorado
+* versão do agente
+* comunicação funcional com o manager
+
+---
+
+## 🛡️ Importância para Segurança
+
+O monitoramento de endpoints permite:
+
+* coleta centralizada de logs
+* auditoria de eventos
+* investigação de incidentes
+* visibilidade do ambiente
+* monitoramento contínuo
+
+---
+
+# 📸 02 — Simulação de brute force SSH com Hydra
+
+![Simulação de brute force SSH com Hydra](evidencias/02-hydra-ssh-bruteforce.png)
+
+## 🧪 O que foi realizado
+
+Foi utilizada a ferramenta Hydra para simular um ataque de brute force SSH contra o alvo vulnerável.
+
+---
+
+## 🔍 Resultado Obtido
+
+As tentativas de autenticação geraram eventos de segurança monitorados pelo ambiente SIEM.
+
+---
+
+## 🛡️ Importância para Segurança
+
+Ataques de brute force podem indicar:
+
+* tentativa de invasão
+* exploração de credenciais fracas
+* credential access
+* atividade maliciosa
 
 Esse tipo de evento é frequentemente monitorado em ambientes SOC.
 
 ---
 
-## 📸 02 — Serviço SSH ativo no ambiente Linux
+# 📸 03 — Execução das tentativas de autenticação
 
-SSH ativo
+![Execução das tentativas de autenticação](evidencias/03-hydra-execution.png)
 
-### Análise Técnica
+## 🧪 O que foi realizado
 
-O serviço OpenSSH foi iniciado e validado no ambiente Linux para permitir os testes de autenticação controlados.
-
-### Importância para Segurança
-
-Serviços SSH expostos na rede podem ser alvo de:
-- brute force
-- exploração remota
-- credenciais comprometidas
-
-Por isso o monitoramento desse serviço é fundamental em ambientes corporativos.
+Durante os testes com Hydra, múltiplas tentativas de autenticação SSH foram executadas contra o alvo monitorado.
 
 ---
 
-## 📸 03 — Falhas de autenticação e erros de conexão
+## 🔍 Resultado Obtido
 
-Falhas de autenticação
+O sistema registrou:
 
-### Análise Técnica
-
-As múltiplas tentativas de autenticação realizadas pelo Hydra geraram erros e eventos registrados no sistema monitorado.
-
-### Importância para Segurança
-
-Eventos repetidos de falha de login podem indicar:
-- brute force
-- tentativa de invasão
-- atividade suspeita
-
-Esses eventos são frequentemente correlacionados em plataformas SIEM.
+* falhas de login
+* tentativas repetidas
+* erros de autenticação
+* geração de logs SSH
 
 ---
 
-## 📸 04 — Eventos e alertas identificados no Wazuh
+## 🛡️ Importância para Segurança
 
-Alertas Wazuh
+Falhas repetidas de autenticação podem indicar:
 
-### Análise Técnica
-
-O Wazuh identificou eventos relacionados a autenticação SSH e atividades monitoradas durante os testes realizados no laboratório.
-
-### Importância para Segurança
-
-O monitoramento SIEM permite:
-- análise centralizada
-- investigação de eventos
-- correlação de logs
-- identificação de comportamento suspeito
+* brute force
+* tentativa de acesso não autorizado
+* reconhecimento de serviços
+* atividade suspeita
 
 ---
 
-## 📸 05 — Agente Kali Linux ativo no Wazuh
+# 📸 04 — Serviço SSH ativo no alvo
 
-Agente Kali
+![Serviço SSH ativo no alvo](evidencias/04-ssh-service-status.png)
 
-### Análise Técnica
+## 🧪 O que foi realizado
 
-O endpoint Kali Linux foi registrado corretamente no Wazuh Manager e permaneceu ativo durante o monitoramento do ambiente.
+O serviço OpenSSH foi iniciado e validado no ambiente Linux.
 
-### Importância para Segurança
+---
 
-A visibilidade dos endpoints monitorados é essencial para:
-- coleta de logs
-- auditoria
-- investigação de incidentes
-- monitoramento contínuo
+## 🔍 Resultado Obtido
+
+O ambiente ficou apto para:
+
+* conexões SSH
+* autenticação remota
+* geração de eventos monitoráveis
+
+---
+
+## 🛡️ Importância para Segurança
+
+Serviços SSH expostos podem ser alvo de:
+
+* brute force
+* exploração remota
+* credenciais comprometidas
+
+Por isso seu monitoramento é essencial em ambientes corporativos.
+
+---
+
+# 📸 05 — Eventos e alertas detectados pelo Wazuh
+
+![Eventos e alertas detectados pelo Wazuh](evidencias/05-wazuh-threat-detection.png)
+
+## 🧪 O que foi realizado
+
+Os eventos gerados durante os testes foram enviados para o Wazuh SIEM.
+
+---
+
+## 🔍 Resultado Obtido
+
+O painel apresentou:
+
+* logs do sistema
+* eventos SSH
+* alertas monitorados
+* registros AppArmor
+* informações do endpoint monitorado
+* análise centralizada de eventos
+
+---
+
+## 🛡️ Importância para Segurança
+
+O uso de SIEM permite:
+
+* centralização de logs
+* correlação de eventos
+* investigação de incidentes
+* detecção de ameaças
+* resposta rápida
+* monitoramento contínuo
+
+---
+
+# 📊 Tabela de Evidências
+
+| Evidência | Descrição                               |
+| --------- | --------------------------------------- |
+| 01        | Agente Wazuh ativo e conectado          |
+| 02        | Simulação de brute force SSH            |
+| 03        | Execução das tentativas de autenticação |
+| 04        | Serviço SSH ativo no alvo               |
+| 05        | Eventos detectados pelo Wazuh           |
 
 ---
 
@@ -158,23 +346,47 @@ A visibilidade dos endpoints monitorados é essencial para:
 
 O laboratório foi capaz de:
 
-- monitorar eventos SSH
-- registrar logs de autenticação
-- detectar atividades suspeitas
-- analisar eventos em ambiente SIEM
-- centralizar logs no Wazuh
-- praticar conceitos de Blue Team e SOC
+* monitorar eventos SSH
+* detectar tentativas de brute force
+* registrar falhas de autenticação
+* centralizar logs no Wazuh
+* investigar eventos de segurança
+* praticar análise de logs
+* aplicar conceitos de Blue Team
+* simular monitoramento SOC
 
 ---
 
 # 🎯 Competências Desenvolvidas
 
-- SIEM
-- Monitoramento de eventos
-- Análise de logs
-- SSH Monitoring
-- Threat Detection
-- Blue Team
-- Investigação de eventos
-- Troubleshooting Linux
-- Segurança em ambientes virtualiza
+* SIEM
+* Wazuh
+* Threat Detection
+* Blue Team
+* Análise de Logs
+* SSH Monitoring
+* Linux
+* Investigação de Eventos
+* Monitoramento de Endpoints
+* Correlação de Logs
+* Troubleshooting Linux
+* Segurança em Ambientes Virtualizados
+* Simulação de Ataques Controlados
+
+---
+
+# 📚 Conclusão
+
+Este projeto permitiu aprofundar conhecimentos em monitoramento de eventos e análise de logs utilizando Wazuh SIEM em ambiente virtualizado.
+
+Além da parte ofensiva controlada com Hydra, o laboratório possibilitou compreender como eventos de autenticação são registrados, analisados e monitorados em plataformas SIEM utilizadas em ambientes corporativos.
+
+O projeto também contribuiu para o desenvolvimento prático de habilidades relacionadas a:
+
+* SOC
+* monitoramento de segurança
+* investigação de eventos
+* análise de incidentes
+* Blue Team
+* administração Linux
+* segurança ofensiva controlada
